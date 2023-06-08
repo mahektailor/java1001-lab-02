@@ -15,7 +15,10 @@ fun averageArrayTester(){
     println(averageArray(arrayOf(1,2,3,4,5)))
     print("this average of sum of array 2 :")
     println(averageArray(arrayOf(2,3,4,5)))
-    println ("this is sum of null array  :")
-    print(averageArray(arrayOf()))
+    print ("this is sum of null array  :")
+    println(averageArray(arrayOf()))
 }
+// Creating Function to Encrpt
+fun encryptCipher(input: String, shift: Int): String{
 
+}

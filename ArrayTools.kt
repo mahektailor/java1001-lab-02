@@ -1,6 +1,6 @@
 fun main() {
   averageArrayTester()
-  
+ 
 }
 fun averageArray(inputArray: Array<Int>): Double {
     // Creating Variable sum to find summation of array
@@ -11,6 +11,7 @@ fun averageArray(inputArray: Array<Int>): Double {
     return sum/inputArray.size
 }
 fun averageArrayTester(){
+    
     print("this average of sum of array 1 :")
     println(averageArray(arrayOf(1,2,3,4,5)))
     print("this average of sum of array 2 :")
@@ -18,7 +19,4 @@ fun averageArrayTester(){
     print ("this is sum of null array  :")
     println(averageArray(arrayOf()))
 }
-// Creating Function to Encrpt
-fun encryptCipher(input: String, shift: Int): String{
 
-}

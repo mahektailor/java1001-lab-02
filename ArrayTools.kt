@@ -1,6 +1,6 @@
 fun main() {
   averageArrayTester()
- 
+//
 }
 fun averageArray(inputArray: Array<Int>): Double {
     // Creating Variable sum to find summation of array

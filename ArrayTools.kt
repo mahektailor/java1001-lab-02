@@ -24,7 +24,21 @@ fun main() {
     println("Reversed Array 1: ${reversed1.contentToString()}")
     println("Reversed Array 2: ${reversed2.contentToString()}")
     println("Reversed Array 3: ${reversed3.contentToString()}")
-    //
+    
+
+    // Caesar cipher
+    println("Caesar Cipher  Encyption ")
+    println("Hello, World!")
+    println("Encrpting...")
+    val inputStrings = listOf("Hello, World!")
+    val shift = 3
+
+    val outputStrings = caesarCipher(inputStrings, shift)
+
+    for (outputString in outputStrings) {
+        println(outputString)
+    }
+
 }
 
 fun averageArray(inputArray: Array<Int>): Double {
@@ -72,4 +86,37 @@ fun <T> reverseArray(array: Array<T>): Array<T> {
     }
 
     return reversedArray
+}
+
+
+fun caesarCipher(inputStrings: List<String>, shift: Int): List<String> {
+    val outputStrings = mutableListOf<String>()
+
+    for (inputString in inputStrings) {
+        val shiftedString = StringBuilder()
+
+        for (char in inputString) {
+            if (char.isLetter()) {
+                val shiftedChar = shiftChar(char, shift)
+                shiftedString.append(shiftedChar)
+            } else {
+                shiftedString.append(char)
+            }
+        }
+
+        outputStrings.add(shiftedString.toString())
+    }
+
+    return outputStrings
+}
+
+fun shiftChar(char: Char, shift: Int): Char {
+    val alphabetSize = 26
+    val isLowerCase = char.isLowerCase()
+    val baseCharCode = if (isLowerCase) 'a'.toInt() else 'A'.toInt()
+    val charCode = char.toInt() - baseCharCode
+    val shiftedCharCode = (charCode + shift + alphabetSize) % alphabetSize
+    val shiftedChar = (shiftedCharCode + baseCharCode).toChar()
+
+    return if (isLowerCase) shiftedChar else shiftedChar.toUpperCase()
 }

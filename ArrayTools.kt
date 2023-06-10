@@ -113,10 +113,13 @@ fun caesarCipher(inputStrings: List<String>, shift: Int): List<String> {
 fun shiftChar(char: Char, shift: Int): Char {
     val alphabetSize = 26
     val isLowerCase = char.isLowerCase()
-    val baseCharCode = if (isLowerCase) 'a'.toInt() else 'A'.toInt()
-    val charCode = char.toInt() - baseCharCode
+    val baseCharCode = if (isLowerCase) 'a'.code else 'A'.code
+    val charCode = char.code - baseCharCode
     val shiftedCharCode = (charCode + shift + alphabetSize) % alphabetSize
     val shiftedChar = (shiftedCharCode + baseCharCode).toChar()
 
-    return if (isLowerCase) shiftedChar else shiftedChar.toUpperCase()
+    return if (isLowerCase) shiftedChar else shiftedChar.uppercaseChar()
 }
+
+
+
